@@ -14,8 +14,19 @@
 欢迎你，
 <%
     //通过session获取数据
-    User user=(User)session.getAttribute("user");
-    out.println(user.getRealname());
+    Object o=session.getAttribute("user");
+    if(o!=null){
+        User user=(User)o;
+        out.println(user.getRealname());
+    }else{
+%>
+<script type="text/javascript">
+    alert("请登录！");
+    window.location.href="login.jsp";
+</script>
+<%
+    }
+
 %>
 </body>
 </html>

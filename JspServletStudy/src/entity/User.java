@@ -65,4 +65,8 @@ public class User {
         this.realname = realname;
         this.phone = phone;
     }
+
+    public User() {
+        super();
+    }
 }

@@ -15,27 +15,27 @@
 <body>
 <%
     request.setCharacterEncoding("utf-8");
-    String username=request.getParameter("username");
-    String password=request.getParameter("password");
-    String realname=request.getParameter("realname");
-    String phone=request.getParameter("phone");
+    String username = request.getParameter("username");
+    String password = request.getParameter("password");
+    String realname = request.getParameter("realname");
+    String phone = request.getParameter("phone");
 
     //实例一个User对象
-    User user=new User(0,username,password,realname,phone);
+    User user = new User(0, username, password, realname, phone);
     //实例一个UserService对象完成注册工作（插入数据库）
-    UserService userService=new UserServiceImpl();
-    boolean isok=userService.register(user);
-    if(isok){
+    UserService userService = new UserServiceImpl();
+    boolean isok = userService.register(user);
+    if (isok) {
 %>
 <script type="text/javascript">
 
     alert("用户注册成功！");
-    window.location.href="register.jsp";
+    window.location.href = "register2.jsp";
 
 </script>
 
 <%
-}else{
+} else {
 %>
 <script type="text/javascript">
     alert("用户注册失败！");
