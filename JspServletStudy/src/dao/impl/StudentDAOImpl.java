@@ -97,7 +97,7 @@ public class StudentDAOImpl implements StudentDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-
+			dbUtil.close();
 			if (!list.isEmpty()) {
 				return list.get(0);
 			} else {
@@ -120,6 +120,8 @@ public class StudentDAOImpl implements StudentDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
+			dbUtil.close();
+
 		}
 		return list;
 	}
@@ -170,6 +172,8 @@ public class StudentDAOImpl implements StudentDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
+			dbUtil.close();
+
 		}
 
 		return allCount;

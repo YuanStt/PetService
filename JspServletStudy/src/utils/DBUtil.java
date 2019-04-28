@@ -143,6 +143,8 @@ public class DBUtil {
 			cachedRowSet.populate(resultSet, (page - 1) * pageSize + 1);
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}finally {
+			close();
 		}
 		
 		return cachedRowSet;

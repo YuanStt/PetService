@@ -38,7 +38,7 @@
 </script>
 <div class="container">
     <form action="opupdate.jsp" method="post">
-        学生编号：<input type="text" name="sid" id="sid" >
+        学生编号：<input type="text" name="sid" id="sid" ><br/>
         学生学号：<input type="text" name="stuNo" id="stuNo" ><br/>
         学生姓名：<input type="text" name="stuName" id="stuName" ><br/>
         学生生日：<input type="text" name="stuBirthday" id="stuBrithday" ><br/>
