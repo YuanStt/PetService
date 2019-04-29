@@ -23,7 +23,7 @@
     </script>
 </head>
 <body>
-<form action="opauth.jsp" method="post" onsubmit="return submitForm()">
+<form action="auth.do" method="post" onsubmit="return submitForm()">
     <input type="text" name="username" />
     <input type="password" name="password" id="password"/>
     <input type="submit" value="登录"/>

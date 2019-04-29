@@ -23,7 +23,7 @@
 </head>
 <body>
     <div class="container">
-        <form action="opreg.jsp" method="post" onsubmit="return submitForm()">
+        <form action="reg.do" method="post" onsubmit="return submitForm()">
             用户名：<input type="text" name="username" /><br/>
             密码：<input type="password" name="password" id="password"/><br/>
             确认密码：<input type="password" name="cpassword" /><br/>
