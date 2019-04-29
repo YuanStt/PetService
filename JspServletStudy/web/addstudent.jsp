@@ -12,7 +12,7 @@
 </head>
 <body>
 <div class="container">
-    <form action="opadd.jsp" method="post">
+    <form action="addstu.do" method="post">
         学生学号：<input type="text" name="stuNo"><br/>
         学生姓名：<input type="text" name="stuName"><br/>
         学生生日：<input type="text" name="stuBirthday"><br/>
