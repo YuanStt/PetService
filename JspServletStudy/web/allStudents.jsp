@@ -7,6 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>所有学生</title>
@@ -19,34 +20,26 @@
         <a href="addstudent.jsp" class="btn btn-default">添加学生</a>
     </p>
     <table class="table table-striped table-hover">
-        <%
-            List<Student> list = (List) request.getAttribute("list");
-            for (int i = 0; i < list.size(); i++) {
-                Student student = list.get(i);
-
-        %>
+        <c:forEach items="${list }" var="student">
         <tr>
-            <td><%=student.getId()%>
+            <td>${student.id }
             </td>
-            <td><%=student.getStuNo()%>
+            <td>${student.stuNo }
             </td>
-            <td><%=student.getStuName()%>
+            <td>${student.stuName }
             </td>
-            <td><%=student.getStuBirthday()%>
+            <td>${student.stuBirthday }
             </td>
-            <td><%=student.getStuAddress()%>
+            <td>${student.stuAddress }
             </td>
-            <td><%=student.getStuPhone()%>
+            <td>${student.stuPhone }
             </td>
-            <td><%=student.getStuHeight()%>
+            <td>${student.stuHeight }
             </td>
-            <td><a href="updatestudent.jsp?stuId=<%=student.getId()%>" class="btn btn-warning">编辑</a></td>
-            <td><a href="delstu.do?stuId=<%=student.getId()%> " class="btn btn-danger">删除</a></td>
+            <td><a href="updatestudent.jsp?stuId=${student.id }" class="btn btn-warning">编辑</a></td>
+            <td><a href="delstu.do?stuId=${student.id } " class="btn btn-danger">删除</a></td>
         </tr>
-        <%
-            }
-        %>
-
+        </c:forEach>
     </table>
 </div>
 </body>

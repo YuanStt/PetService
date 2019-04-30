@@ -37,7 +37,10 @@ public class AuthServlet extends HttpServlet {
                 //保存
                 session.setAttribute("user",user);
                 //进行跳转，跳转到用户的主页面，welcome.jsp
-                url="welcome.jsp";
+                msg="登录成功";
+                url="success.jsp";
+                String jumpUrl="allstudents.do";
+                request.setAttribute("jumpUrl",jumpUrl);
             }else{
                 //密码输错了
                 msg="用户名或密码输错了！请重试！";
