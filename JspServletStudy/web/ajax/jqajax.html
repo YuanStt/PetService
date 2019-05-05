@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery的ajax方法</title>
+    <script src="../js/jquery-3.4.0.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#btnGet").click(function () {
+                $.ajax({
+                   url:"../date.do",
+                   success:function (data) {
+                       var  jsonData=JSON.parse(data);
+                       console.log(jsonData);
+                       $("#content").html(jsonData.date);
+                   } ,
+                    async:true,
+                    data:{
+                       username:"zs",
+                        password:"123456"
+                    }
+                });
+            }) ;
+        });
+    </script>
+</head>
+<body>
+    <div id="content"></div>
+    <button id="btnGet" >获取系统时间</button>
+</body>
+</html>

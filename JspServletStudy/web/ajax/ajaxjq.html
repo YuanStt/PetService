@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用jQuery来调用ajax</title>
+    <script src="../js/jquery-3.4.0.js"></script>
+    <script type="text/javascript">
+            function getDate() {
+                $("#content").load("../date.do")
+            }
+    </script>
+</head>
+<body>
+<div id="content"></div>
+<button onclick="getDate()">获取时间</button>
+</body>
+</html>

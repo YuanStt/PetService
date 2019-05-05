@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax的Get</title>
+    <script src="../js/jquery-3.4.0.js"></script>
+    <script type="text/javascript">
+        $(function () {
+           $("#btnGet").click(function () {
+               $.get("../date.do",function (date,status) {
+                   console.log("date",date);
+                   console.log("status",status);
+                   $("#content").html(date)
+               })
+           }) ;
+        });
+    </script>
+</head>
+<body>
+    <div id="content">
+
+    </div>
+    <button id="btnGet">获取时间</button>
+</body>
+</html>

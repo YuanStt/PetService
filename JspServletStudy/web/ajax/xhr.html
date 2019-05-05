@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function getDate() {
+            var xmlhttp;
+            if (window.XMLHttpRequest){
+                xmlhttp=new XMLHttpRequest();
+            }else{
+
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange=function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
+                    //做事情
+                    //alert(xmlhttp.responseText);
+                    document.getElementById("dateinput").value=xmlhttp.responseText;
+                }
+
+            }
+            xmlhttp.open("GET","../date.do",true);
+            xmlhttp.send();
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="dateinput">
+    <button onclick="getDate()">获取系统时间</button>
+</body>
+</html>
