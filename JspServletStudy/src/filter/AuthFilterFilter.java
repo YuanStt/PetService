@@ -14,6 +14,8 @@ public class AuthFilterFilter implements Filter {
 
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
 
+        req.setCharacterEncoding("utf-8");
+        resp.setCharacterEncoding("utf-8");
         //校验session中是否有对应的元素属性
         //强制转化成HttpServletRequest
         HttpServletRequest httpServletRequest = (HttpServletRequest) req;
@@ -22,11 +24,10 @@ public class AuthFilterFilter implements Filter {
         HttpSession session = httpServletRequest.getSession();
         String path = httpServletRequest.getRequestURI();
         Object object = session.getAttribute("user");
-
-        if (path.indexOf("auth.do") > -1) {//登录页面不过滤
+        chain.doFilter(req, resp);
+        /*if (path.indexOf("auth.do") > -1) {//登录页面不过滤
             chain.doFilter(req, resp);//递交给下一个过滤器
         } else {
-
 
             if (object != null) {
                 //说明用户登陆了
@@ -35,7 +36,7 @@ public class AuthFilterFilter implements Filter {
                 httpServletResponse.sendRedirect("login.jsp");
             }
 
-        }
+        }*/
     }
 
     public void init(FilterConfig config) throws ServletException {

@@ -56,4 +56,12 @@ public class StudentServiceImpl implements StudentService {
 		return student;
 	}
 
+	@Override
+	public List<Student> findByPage(Integer currPage, Integer pageSize) {
+
+		studentDAO=new StudentDAOImpl();
+		List<Student> list = studentDAO.findAllByPage(pageSize, currPage);
+		return list;
+	}
+
 }

@@ -12,7 +12,7 @@
                    success:function (data) {
                        var  jsonData=JSON.parse(data);
                        console.log(jsonData);
-                       $("#content").html(jsonData.date);
+                       $("#content").html(jsonData.msg);
                    } ,
                     async:true,
                     data:{

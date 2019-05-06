@@ -39,7 +39,7 @@ public class AuthServlet extends HttpServlet {
                 //进行跳转，跳转到用户的主页面，welcome.jsp
                 msg="登录成功";
                 url="success.jsp";
-                String jumpUrl="allstudents.do";
+                String jumpUrl="studentspage.do";
                 request.setAttribute("jumpUrl",jumpUrl);
             }else{
                 //密码输错了

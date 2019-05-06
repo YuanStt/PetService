@@ -40,6 +40,6 @@ public interface StudentDAO {
 	public int count();
 	
 	//��ҳ
-	public List<Student> finAllByPage(int pageSize, int page);
+	public List<Student> findAllByPage(int pageSize, int page);
 
 }

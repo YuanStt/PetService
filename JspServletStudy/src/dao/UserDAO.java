@@ -10,4 +10,6 @@ public interface UserDAO {
 
     //通过用户名读取用户
     public User findByUsername(String username);
+
+    public int countByUsername(String username);
 }

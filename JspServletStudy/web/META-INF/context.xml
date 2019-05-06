@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<Context>
+    <Environment name="tjndi" value="hello JNDI" type="java.lang.String" />
+    <Resource name="mysqlDataSource" type="javax.sql.DataSource"
+              driverClassName="com.mysql.jdbc.Driver"
+              url="jdbc:mysql://localhost:3306/zjweu?&amp;useSSL=false&amp;serverTimezone=UTC"
+              username="root" password="password" maxActive="50" maxIdle="10" maxWait="60000"
+              removeAbandoned="true" removeAbandonedTimeOut="100000" />
+</Context>

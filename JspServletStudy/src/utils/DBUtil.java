@@ -3,19 +3,21 @@ package utils;
 
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ResourceBundle;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
 import javax.sql.rowset.CachedRowSet;
 import javax.sql.rowset.RowSetFactory;
 import javax.sql.rowset.RowSetProvider;
 
 public class DBUtil {
 
-	// �������ݿ����� com.mysql.jdbc.Driver
+	/*// �������ݿ����� com.mysql.jdbc.Driver
 	private static String driverName ;
 	// ��ȡmysql���ӵ�ַ
 	private static String url;
@@ -23,12 +25,12 @@ public class DBUtil {
 	private static String username;
 	// ���ݿ�����
 	private static String password;
-	// ��ȡһ�����ݵ�����
-	Connection connection = null;
-	ResultSet resultSet = null;
-	PreparedStatement prepareStatement = null;
+	// ��ȡһ�����ݵ�����*/
+	private Connection connection = null;
+	private ResultSet resultSet = null;
+	private PreparedStatement prepareStatement = null;
 	
-	static{
+	/*static{
 		
 		ResourceBundle resourceBundle = ResourceBundle.getBundle("db");
 		driverName = resourceBundle.getString("drivername");
@@ -36,7 +38,7 @@ public class DBUtil {
 		username = resourceBundle.getString("username");
 		password = resourceBundle.getString("password");
 		
-	}
+	}*/
 
 	// �������ݿ����->insert/update/delete
 	public int update(String sql, Object... params) {
@@ -155,9 +157,13 @@ public class DBUtil {
 		// ��Ҫʹ�õ���
 		// Connection��Դ�����ģ�һ����˵��ռ�ô�����Ĳ���ʱ�䣬����Connectionһ��Ҫ�رջ��ա�
 		try {
-			Class.forName(driverName);
-			connection = DriverManager.getConnection(url, username, password);
-		} catch (ClassNotFoundException e) {
+			/*Class.forName(driverName);
+			connection = DriverManager.getConnection(url, username, password);*/
+			//采用数据库连接池技术
+			Context context = new InitialContext();
+			DataSource ds = (DataSource)context.lookup("java:comp/env/mysqlDataSource");
+			connection = ds.getConnection();
+		} catch (NamingException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
 			e.printStackTrace();

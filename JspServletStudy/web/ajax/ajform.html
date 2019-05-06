@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>传递参数</title>
+    <script src="../js/jquery-3.4.0.js"></script>
+    <script src="../js/jquery.form.js"></script>
+    <script type="text/javascript">
+        function s() {
+            $("#form1").ajaxSubmit(function (data) {
+                alert(data);
+            });
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <form id="form1" method="post" action="../date.do" onsubmit="return s()">
+        用户名：<input name="username" type="text"><br />
+        密码：<input name="password" type="password"> <br />
+        <input type="submit">
+    </form>
+</body>
+</html>

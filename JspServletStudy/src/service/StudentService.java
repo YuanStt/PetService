@@ -23,4 +23,6 @@ public interface StudentService {
 	
 	public Student findById(Integer id);
 
+	public List<Student> findByPage(Integer currPage,Integer pageSize);
+
 }

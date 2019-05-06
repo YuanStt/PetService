@@ -32,4 +32,12 @@ public class UserServiceImpl implements UserService {
 		return user;
 	}
 
+	@Override
+	public boolean countByUsername(String username) {
+		userDAO = new UserDAOImpl();
+		int count = userDAO.countByUsername(username);
+		//false代表用户名已存在不可用，true代表用户不存在可用
+		return count>0?false:true;
+	}
+
 }

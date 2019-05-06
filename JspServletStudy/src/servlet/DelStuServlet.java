@@ -27,7 +27,7 @@ public class DelStuServlet extends HttpServlet {
         if (isok) {
             msg="删除成功！";
             url="success.jsp";
-            String jumpUrl="allstudents.do";
+            String jumpUrl="studentspage.do";
             request.setAttribute("jumpUrl",jumpUrl);
         }else{
             msg="删除失败！";

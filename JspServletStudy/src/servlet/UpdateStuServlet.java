@@ -38,7 +38,7 @@ public class UpdateStuServlet extends HttpServlet {
         if (isok) {
             msg="修改成功！";
             url="success.jsp";
-            String jumpUrl="allstudents.do";
+            String jumpUrl="studentspage.do";
             request.setAttribute("jumpUrl",jumpUrl);
         }else{
             msg="修改失败！";

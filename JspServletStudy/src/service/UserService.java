@@ -10,5 +10,7 @@ public interface UserService {
 	public boolean auth(String username, String password);
 	
 	public User findByUsername(String username);
+
+	public boolean countByUsername(String username);
 	
 }

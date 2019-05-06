@@ -180,7 +180,7 @@ public class StudentDAOImpl implements StudentDAO {
 	}
 
 	@Override
-	public List<Student> finAllByPage(int pageSize, int page) {
+	public List<Student> findAllByPage(int pageSize, int page) {
 		
 		List<Student> list = new ArrayList<Student>();
 		String sql = "select * from tab_student";

@@ -78,4 +78,29 @@ public class UserDAOImpl implements UserDAO {
         return user;
 
     }
+
+    @Override
+    public int countByUsername(String username) {
+
+        String sql="select count(*) from tbl_user where username=?";
+        dbUtil = new DBUtil();
+        ResultSet resultSet = dbUtil.query(sql,username);
+        int count=1;
+        try{
+            while(resultSet.next()){
+                count = resultSet.getInt(1);
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }finally {
+            if (resultSet!=null) {
+                try {
+                    resultSet.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return count;
+    }
 }
